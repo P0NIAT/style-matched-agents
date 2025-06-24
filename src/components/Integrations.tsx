@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 
 const integrations = [
   { name: "Instagram", logo: "📷", color: "from-pink-500 to-purple-600" },
