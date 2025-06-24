@@ -14,10 +14,11 @@ const PricingSection = () => {
         "1 AI agent",
         "1,000 beauty conversations/mo",
         "1 platform integration",
-        "Custom tone & personality training",
+        "Custom tune & personal training",
         "Beauty-specific conversation templates",
         "Priority support from beauty experts",
-        "Advanced analytics"
+        "Advanced analytics",
+        "Cancel anytime"
       ],
       popular: false
     },
@@ -31,10 +32,11 @@ const PricingSection = () => {
         "3 AI agents",
         "3,000 beauty conversations/mo",
         "3 platform integrations",
-        "All Starter features included",
+        "All Starter features",
         "Multi-location support",
         "Team collaboration tools",
-        "Enhanced reporting dashboard"
+        "Enhanced reporting dashboard",
+        "Cancel anytime"
       ],
       popular: true
     },
@@ -51,7 +53,8 @@ const PricingSection = () => {
         "White-label options",
         "API access",
         "Custom integrations",
-        "24/7 premium support"
+        "24/7 premium support",
+        "Cancel anytime"
       ],
       popular: false
     }
@@ -126,7 +129,7 @@ const PricingSection = () => {
                     ? 'bg-gradient-to-r from-brand-gold to-brand-cyan hover:from-brand-cyan hover:to-brand-gold'
                     : 'bg-brand-cyan hover:bg-brand-cyan/90'
                 } text-white font-opensans font-bold py-3 px-6 rounded-full hover:scale-105 transition-all duration-300`}>
-                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
+                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Choose Your Plan'}
                 </Button>
               </div>
             </div>
@@ -136,9 +139,6 @@ const PricingSection = () => {
         <div className="text-center">
           <p className="font-opensans text-gray-500 text-sm">
             * + setup fee
-          </p>
-          <p className="font-opensans text-gray-500 text-sm mt-2">
-            14-day free trial • No credit card required • Cancel anytime
           </p>
         </div>
       </div>
