@@ -6,6 +6,7 @@ import HowItWorks from "@/components/HowItWorks";
 import DemoSection from "@/components/DemoSection";
 import CaseStudies from "@/components/CaseStudies";
 import Integrations from "@/components/Integrations";
+import TestimonialsCarousel from "@/components/TestimonialsCarousel";
 import PricingSection from "@/components/PricingSection";
 import Footer from "@/components/Footer";
 
@@ -19,6 +20,7 @@ const Index = () => {
       <DemoSection />
       <CaseStudies />
       <Integrations />
+      <TestimonialsCarousel />
       <PricingSection />
       <Footer />
     </div>

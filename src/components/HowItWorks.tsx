@@ -24,13 +24,13 @@ const steps = [
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-white">
+    <section id="how-it-works" className="py-24 bg-brand-navy">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-brand-navy mb-6">
+          <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-white mb-6">
             How It Works
           </h2>
-          <p className="font-opensans text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="font-opensans text-xl text-gray-300 max-w-3xl mx-auto">
             Three simple steps that transform your client communication and booking process
           </p>
         </div>
@@ -39,7 +39,7 @@ const HowItWorks = () => {
           {steps.map((step, index) => (
             <div 
               key={step.number}
-              className="relative animate-fade-in"
+              className="relative animate-fade-in text-center"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
               {/* Connection Line */}
@@ -47,22 +47,17 @@ const HowItWorks = () => {
                 <div className="hidden lg:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-brand-cyan to-transparent transform translate-x-6 z-0"></div>
               )}
               
-              <div className="relative z-10 text-center lg:text-left">
-                {/* Step Number */}
-                <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-brand-cyan to-brand-navy rounded-xl text-white font-montserrat font-bold text-lg mb-4 lg:mb-6">
-                  {step.number}
-                </div>
-                
+              <div className="relative z-10">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-brand-gray rounded-xl flex items-center justify-center mx-auto lg:mx-0 mb-6 group-hover:scale-110 transition-transform duration-300">
-                  <step.icon className="w-8 h-8 text-brand-navy" />
+                <div className="w-16 h-16 bg-brand-cyan rounded-xl flex items-center justify-center mx-auto mb-6">
+                  <step.icon className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="font-montserrat font-bold text-2xl text-brand-navy mb-4">
+                <h3 className="font-montserrat font-bold text-2xl text-white mb-4">
                   {step.title}
                 </h3>
-                <p className="font-opensans text-gray-600 leading-relaxed">
+                <p className="font-opensans text-gray-300 leading-relaxed">
                   {step.description}
                 </p>
               </div>
