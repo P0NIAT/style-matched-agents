@@ -67,11 +67,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Brand colors
-				'brand-navy': '#0A2540',
-				'brand-cyan': '#00ADEF',
-				'brand-gold': '#F5D547',
-				'brand-gray': '#F7F9FC',
+				// Updated feminine brand colors
+				'brand-navy': '#2D1B69', // Deep purple instead of navy
+				'brand-cyan': '#E91E63', // Pink instead of cyan
+				'brand-gold': '#FF6B9D', // Rose gold instead of gold
+				'brand-gray': '#FCF7FF', // Very light lavender instead of gray
+				'brand-accent': '#9C27B0', // Purple accent
+				'brand-soft': '#F8E7F0', // Soft pink background
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -114,6 +116,14 @@ export default {
 						transform: 'scale(1)',
 						opacity: '1'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0px)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
 				}
 			},
 			animation: {
@@ -121,6 +131,7 @@ export default {
 				'accordion-up': 'accordion-up 0.2s ease-out',
 				'fade-in': 'fade-in 0.6s ease-out',
 				'scale-in': 'scale-in 0.3s ease-out',
+				'float': 'float 3s ease-in-out infinite',
 			}
 		}
 	},

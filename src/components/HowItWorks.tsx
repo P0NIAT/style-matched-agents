@@ -5,33 +5,33 @@ const steps = [
   {
     icon: MessageSquare,
     number: "01",
-    title: "Client Messages",
-    description: "AI agent engages naturally, asking about services, preferred dates, and specific details in your unique style."
+    title: "Client Chats",
+    description: "Your AI beauty assistant engages naturally, asking about desired services, timing, and special requests—all in your signature style."
   },
   {
     icon: Calendar,
     number: "02", 
-    title: "Smart Booking",
-    description: "Agent automatically books appointments via Google Calendar or Calendly, checking availability in real-time."
+    title: "Seamless Booking",
+    description: "Appointments are automatically scheduled through your preferred system, with real-time availability checks and confirmations."
   },
   {
     icon: Bell,
     number: "03",
-    title: "Automated Follow-up",
-    description: "SMS confirmations and strategic reminders sent at 72h, 24h, and 2h before appointments."
+    title: "Thoughtful Follow-up",
+    description: "Caring reminders and confirmations are sent at perfect intervals, keeping your clients excited for their beauty transformation."
   }
 ];
 
 const HowItWorks = () => {
   return (
-    <section id="how-it-works" className="py-24 bg-brand-navy">
+    <section id="how-it-works" className="py-24 bg-gradient-to-br from-brand-navy to-brand-accent">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-white mb-6">
-            How It Works
+            Three Steps to Beauty Business Bliss
           </h2>
-          <p className="font-opensans text-xl text-gray-300 max-w-3xl mx-auto">
-            Three simple steps that transform your client communication and booking process
+          <p className="font-opensans text-xl text-pink-100 max-w-3xl mx-auto">
+            From first chat to final appointment confirmation—everything happens automatically while you focus on your craft
           </p>
         </div>
 
@@ -44,20 +44,25 @@ const HowItWorks = () => {
             >
               {/* Connection Line */}
               {index < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-16 left-full w-full h-px bg-gradient-to-r from-brand-cyan to-transparent transform translate-x-6 z-0"></div>
+                <div className="hidden lg:block absolute top-20 left-full w-full h-px bg-gradient-to-r from-brand-gold to-transparent transform translate-x-6 z-0"></div>
               )}
               
-              <div className="relative z-10">
+              <div className="relative z-10 bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
                 {/* Icon */}
-                <div className="w-16 h-16 bg-brand-cyan rounded-xl flex items-center justify-center mx-auto mb-6">
-                  <step.icon className="w-8 h-8 text-white" />
+                <div className="w-20 h-20 bg-gradient-to-br from-brand-gold to-brand-cyan rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <step.icon className="w-10 h-10 text-white" />
+                </div>
+
+                {/* Step Number */}
+                <div className="font-montserrat font-bold text-brand-gold text-sm mb-2 tracking-wide">
+                  STEP {step.number}
                 </div>
 
                 {/* Content */}
                 <h3 className="font-montserrat font-bold text-2xl text-white mb-4">
                   {step.title}
                 </h3>
-                <p className="font-opensans text-gray-300 leading-relaxed">
+                <p className="font-opensans text-pink-100 leading-relaxed">
                   {step.description}
                 </p>
               </div>

@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { Sparkles } from "lucide-react";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -17,15 +18,15 @@ const Header = () => {
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 backdrop-blur-sm border-b border-gray-100 translate-y-0' 
-        : 'bg-transparent translate-y-0'
+        ? 'bg-white/95 backdrop-blur-sm border-b border-pink-100 shadow-lg' 
+        : 'bg-transparent'
     }`}>
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-brand-navy to-brand-cyan rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">SL</span>
+          <div className="flex items-center space-x-3">
+            <div className="w-10 h-10 bg-gradient-to-r from-brand-navy to-brand-cyan rounded-full flex items-center justify-center shadow-lg">
+              <Sparkles className="text-white w-5 h-5" />
             </div>
             <span className={`font-montserrat font-bold text-xl transition-colors ${
               isScrolled ? 'text-brand-navy' : 'text-white'
@@ -35,13 +36,13 @@ const Header = () => {
           </div>
 
           {/* CTA Buttons - Only show when scrolled */}
-          <div className={`flex items-center space-x-4 transition-opacity duration-300 ${
+          <div className={`flex items-center space-x-4 transition-all duration-300 ${
             isScrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
           }`}>
-            <Button className="bg-brand-cyan hover:bg-brand-cyan/90 text-white font-opensans font-medium px-6">
+            <Button className="bg-brand-cyan hover:bg-brand-cyan/90 text-white font-opensans font-medium px-6 rounded-full shadow-lg">
               Watch Demo
             </Button>
-            <Button variant="outline" className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-brand-navy font-opensans font-medium px-6">
+            <Button variant="outline" className="border-brand-gold text-brand-gold hover:bg-brand-gold hover:text-white font-opensans font-medium px-6 rounded-full">
               See How It Works
             </Button>
           </div>
