@@ -1,8 +1,62 @@
 
 import { Button } from "@/components/ui/button";
-import { Check, Sparkles } from "lucide-react";
+import { Check, Sparkles, Crown, Building } from "lucide-react";
 
 const PricingSection = () => {
+  const plans = [
+    {
+      name: "Starter",
+      price: "£49",
+      period: "/mo*",
+      icon: Sparkles,
+      description: "Perfect for new beauty businesses",
+      features: [
+        "1 AI agent",
+        "1,000 beauty conversations/mo",
+        "1 platform integration",
+        "Custom tone & personality training",
+        "Beauty-specific conversation templates",
+        "Priority support from beauty experts",
+        "Advanced analytics"
+      ],
+      popular: false
+    },
+    {
+      name: "Growing Business",
+      price: "£99",
+      period: "/mo*",
+      icon: Crown,
+      description: "For established beauty businesses",
+      features: [
+        "3 AI agents",
+        "3,000 beauty conversations/mo",
+        "3 platform integrations",
+        "All Starter features included",
+        "Multi-location support",
+        "Team collaboration tools",
+        "Enhanced reporting dashboard"
+      ],
+      popular: true
+    },
+    {
+      name: "Enterprise",
+      price: "Custom",
+      period: "pricing*",
+      icon: Building,
+      description: "For large beauty chains & franchises",
+      features: [
+        "Unlimited agents & conversations",
+        "Unlimited integrations",
+        "Dedicated onboarding & SLA",
+        "White-label options",
+        "API access",
+        "Custom integrations",
+        "24/7 premium support"
+      ],
+      popular: false
+    }
+  ];
+
   return (
     <section id="pricing" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
@@ -11,48 +65,53 @@ const PricingSection = () => {
             Simple Pricing for Beautiful Results
           </h2>
           <p className="font-opensans text-xl text-gray-600 max-w-3xl mx-auto">
-            One plan that includes everything you need to transform your beauty business. No hidden fees, no complicated tiers.
+            Choose the perfect plan to transform your beauty business. All plans include everything you need to get started.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          {/* Pricing Card - Left */}
-          <div className="space-y-6">
-            <div className="bg-gradient-to-br from-brand-soft to-white rounded-3xl p-8 border-2 border-brand-gold shadow-xl relative overflow-hidden">
-              {/* Decorative elements */}
-              <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-br from-brand-gold/20 to-brand-cyan/20 rounded-full transform translate-x-12 -translate-y-12"></div>
-              
-              <div className="text-center mb-8 relative z-10">
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-brand-cyan to-brand-gold rounded-full mb-4">
-                  <Sparkles className="w-8 h-8 text-white" />
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+          {plans.map((plan, index) => (
+            <div 
+              key={plan.name}
+              className={`relative bg-gradient-to-br ${
+                plan.popular 
+                  ? 'from-brand-soft to-white border-2 border-brand-gold shadow-xl scale-105' 
+                  : 'from-white to-brand-gray border border-pink-100 shadow-lg'
+              } rounded-3xl p-8 transition-all duration-300 hover:shadow-xl ${
+                plan.popular ? 'hover:scale-110' : 'hover:scale-105'
+              }`}
+            >
+              {plan.popular && (
+                <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                  <div className="bg-gradient-to-r from-brand-gold to-brand-cyan text-white px-6 py-2 rounded-full text-sm font-opensans font-bold">
+                    ✨ Most Popular
+                  </div>
                 </div>
-                <h3 className="font-montserrat font-bold text-3xl text-brand-navy mb-2">
-                  Beauty Pro Plan
+              )}
+
+              <div className="text-center mb-8">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-brand-cyan to-brand-gold rounded-full mb-4">
+                  <plan.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="font-montserrat font-bold text-2xl text-brand-navy mb-2">
+                  {plan.name}
                 </h3>
                 <div className="flex items-baseline justify-center mb-4">
-                  <span className="text-5xl font-montserrat font-bold text-brand-navy">
-                    £99
+                  <span className="text-4xl font-montserrat font-bold text-brand-navy">
+                    {plan.price}
                   </span>
                   <span className="font-opensans text-gray-600 ml-2 text-lg">
-                    /month
+                    {plan.period}
                   </span>
                 </div>
-                <p className="font-opensans text-gray-600 text-lg">
-                  Everything your beauty business needs to thrive
+                <p className="font-opensans text-gray-600">
+                  {plan.description}
                 </p>
               </div>
 
               <ul className="space-y-4 mb-8">
-                {[
-                  "Up to 1,000 beauty conversations/month",
-                  "All platform integrations included",
-                  "Custom tone & personality training",
-                  "Beauty-specific conversation templates",
-                  "Priority support from beauty experts",
-                  "Advanced analytics & insights",
-                  "Unlimited appointment bookings"
-                ].map((feature, index) => (
-                  <li key={index} className="flex items-start">
+                {plan.features.map((feature, featureIndex) => (
+                  <li key={featureIndex} className="flex items-start">
                     <div className="w-6 h-6 bg-gradient-to-r from-brand-cyan to-brand-gold rounded-full flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">
                       <Check className="w-4 h-4 text-white" />
                     </div>
@@ -62,32 +121,25 @@ const PricingSection = () => {
               </ul>
 
               <div className="text-center">
-                <div className="inline-flex items-center bg-brand-gold/10 text-brand-navy px-4 py-2 rounded-full text-sm font-opensans font-medium mb-2">
-                  ✨ 14-day free trial • No credit card required
-                </div>
+                <Button className={`w-full ${
+                  plan.popular
+                    ? 'bg-gradient-to-r from-brand-gold to-brand-cyan hover:from-brand-cyan hover:to-brand-gold'
+                    : 'bg-brand-cyan hover:bg-brand-cyan/90'
+                } text-white font-opensans font-bold py-3 px-6 rounded-full hover:scale-105 transition-all duration-300`}>
+                  {plan.name === 'Enterprise' ? 'Contact Sales' : 'Start Free Trial'}
+                </Button>
               </div>
             </div>
-          </div>
+          ))}
+        </div>
 
-          {/* CTA - Right */}
-          <div className="text-center lg:text-left">
-            <h3 className="font-montserrat font-bold text-4xl text-brand-navy mb-6 leading-tight">
-              Ready to Transform Your Beauty Business? 💅
-            </h3>
-            <p className="font-opensans text-xl text-gray-600 mb-8 leading-relaxed">
-              Join hundreds of beauty professionals who've already discovered the magic of AI that sounds exactly like them. 
-              <span className="text-brand-cyan font-semibold"> Your clients will love the personal touch!</span>
-            </p>
-            
-            <div className="space-y-4">
-              <Button className="bg-gradient-to-r from-brand-gold to-brand-cyan hover:from-brand-cyan hover:to-brand-gold text-white font-opensans font-bold px-12 py-6 text-xl rounded-full hover:scale-105 transition-all duration-300 w-full lg:w-auto shadow-xl">
-                Start Your Free Trial ✨
-              </Button>
-              <p className="font-opensans text-gray-500 text-sm">
-                Setup takes less than 5 minutes • Cancel anytime
-              </p>
-            </div>
-          </div>
+        <div className="text-center">
+          <p className="font-opensans text-gray-500 text-sm">
+            * + setup fee
+          </p>
+          <p className="font-opensans text-gray-500 text-sm mt-2">
+            14-day free trial • No credit card required • Cancel anytime
+          </p>
         </div>
       </div>
     </section>
