@@ -7,7 +7,7 @@ const testimonials = [
     name: "Sarah Mitchell",
     business: "Luxe Hair Studio",
     quote: "The AI sounds exactly like me! My clients have no idea they're chatting with a bot. It's captured my warm, bubbly personality perfectly. I'm getting 40% more bookings now!",
-    image: "https://images.unsplash.com/photo-1494790108755-2616b12e1fe1?w=80&h=80&fit=crop&crop=face",
+    image: "https://pixabay.com/pl/photos/pi%C4%99kny-pi%C4%99kne-dziewczyny-odzie%C5%BC-2576846",
     rating: 5
   },
   {
