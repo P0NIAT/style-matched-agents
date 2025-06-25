@@ -14,89 +14,66 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Video Background */}
-      <video
-        ref={videoRef}
-        poster="/van2.jpg"
-        src="/Intro.mp4"
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
+    <section className="relative w-full flex items-center justify-center py-12 px-4 md:px-0">
+      {/* Aspect Ratio 16:9 container */}
+      <div className="relative w-full max-w-4xl aspect-w-16 aspect-h-9">
+        {/* Video */}
+        <video
+          ref={videoRef}
+          poster="/van2.jpg"
+          src="/intro.mp4"
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover"
+        />
 
-      {/* Gradient & Decorative Overlays */}
-      <div className="absolute inset-0 z-10">
-        <div className="relative w-full h-full bg-gradient-to-br from-brand-navy via-brand-accent to-brand-cyan">
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/80 to-brand-cyan/70" />
+        {/* Gradient & Shapes (z-10) */}
+        <div className="absolute inset-0 z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-brand-navy/60 to-brand-cyan/60" />
+          {/* Floating elements */}
           <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute top-20 left-10 w-20 h-20 bg-white/10 rounded-full animate-float" />
+            <div className="absolute top-8 left-8 w-12 h-12 bg-white/10 rounded-full animate-float" />
             <div
-              className="absolute top-40 right-20 w-16 h-16 bg-brand-gold/20 rounded-full animate-float"
+              className="absolute top-16 right-12 w-10 h-10 bg-brand-gold/20 rounded-full animate-float"
               style={{ animationDelay: "1s" }}
             />
             <div
-              className="absolute bottom-32 left-20 w-12 h-12 bg-brand-cyan/30 rounded-full animate-float"
+              className="absolute bottom-16 left-12 w-8 h-8 bg-brand-cyan/30 rounded-full animate-float"
               style={{ animationDelay: "2s" }}
             />
-            <div
-              className="absolute bottom-20 right-40 w-24 h-24 bg-white/5 rounded-full animate-float"
-              style={{ animationDelay: "0.5s" }}
-            />
           </div>
         </div>
-      </div>
 
-      {/* Play Button Overlay */}
-      {!isPlaying && (
-        <div className="absolute inset-0 flex items-center justify-center z-20">
+        {/* Play Button (z-30) */}
+        {!isPlaying && (
           <button
             onClick={handlePlay}
-            className="relative w-28 h-28 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/25 transition-all duration-300 hover:scale-110 border-2 border-brand-gold shadow-2xl"
+            className="absolute inset-0 m-auto z-30 w-20 h-20 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/30 transition transform hover:scale-110 border-2 border-brand-gold shadow-lg"
           >
-            <Play className="w-12 h-12 text-white transition-transform" />
-            <div className="absolute inset-0 rounded-full border-2 border-brand-gold animate-ping opacity-30" />
+            <Play className="w-10 h-10 text-white" />
           </button>
-        </div>
-      )}
+        )}
+      </div>
 
-      {/* Content */}
-      <div className="relative z-30 text-center animate-fade-in px-6">
-        {/* Sparkle Icon */}
-        <div className="mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/30">
-            <Sparkles className="w-8 h-8 text-white animate-pulse" />
-          </div>
-        </div>
-
+      {/* Content below the video */}
+      <div className="relative z-20 text-center mt-8 max-w-2xl mx-auto">
         {/* Headline */}
-        <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-6 leading-tight">
-          <span className="block sm:hidden">
-            SmartLeads AI Agent That Speaks{" "}
-            <span className="text-brand-gold">Your Beauty Language</span>
-          </span>
-          <span className="hidden sm:block">
-            AI That Speaks{" "}
-            <span className="text-brand-gold">Your Beauty Language</span>
-          </span>
+        <h1 className="font-montserrat font-bold text-3xl md:text-5xl text-white mb-4 leading-tight">
+          SmartLeads AI Agent That Speaks{" "}
+          <span className="text-brand-gold">Your Beauty Language</span>
         </h1>
-
         {/* Subhead */}
-        <p className="font-opensans text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-          24/7 chat that books appointments, sends reminders, and sounds exactly
-          like you—{" "}
-          <span className="text-brand-gold font-semibold">
-            your clients will never know it's AI
-          </span>
+        <p className="font-opensans text-lg md:text-xl text-white/90 mb-6">
+          24/7 chat that books appointments, sends reminders, and sounds exactly like you—{" "}
+          <span className="text-brand-gold font-semibold">your clients will never know it's AI</span>
         </p>
-
-        {/* CTA Buttons */}
+        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Button className="bg-gradient-to-r from-brand-gold to-brand-cyan hover:from-brand-cyan hover:to-brand-gold text-white font-opensans font-bold px-12 py-6 text-xl rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">
+          <Button className="bg-gradient-to-r from-brand-gold to-brand-cyan text-white font-bold px-8 py-4 rounded-full">
             Watch Demo
           </Button>
-          <Button className="bg-transparent border-2 border-white text-white font-opensans font-bold px-12 py-6 text-xl rounded-full hover:bg-white/10 transition-all duration-300 shadow-2xl">
+          <Button className="bg-transparent border-2 border-white text-white font-bold px-8 py-4 rounded-full hover:bg-white/10 transition">
             Contact Us
           </Button>
         </div>
