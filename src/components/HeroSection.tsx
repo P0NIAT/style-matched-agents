@@ -40,11 +40,6 @@ const HeroSection = () => {
             AI That Speaks <span className="text-brand-gold">Your Beauty Language</span>
           </span>
         </h1>
-        
-        <p className="font-opensans text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
-          24/7 chat that books appointments, sends reminders, and sounds exactly like you—
-          <span className="text-brand-gold font-semibold"> your clients will never know it's AI</span>
-        </p>
 
         {/* Play Button - Centered on mobile */}
         <div className="mb-8 flex justify-center">
@@ -53,6 +48,12 @@ const HeroSection = () => {
             <div className="absolute inset-0 rounded-full border-2 border-brand-gold animate-ping opacity-30"></div>
           </button>
         </div>
+
+        <p className="font-opensans text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          24/7 chat that books appointments, sends reminders, and sounds exactly like you—
+          <span className="text-brand-gold font-semibold"> your clients will never know it's AI</span>
+        </p>
+        
         <p className="font-opensans text-white mb-8 text-lg">Watch Beauty Demo</p>
 
         {/* CTA Button */}
