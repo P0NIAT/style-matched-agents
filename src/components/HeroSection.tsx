@@ -66,14 +66,14 @@ const HeroSection = () => {
         {/* Sparkle Icon */}
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/30">
-            <Sparkles className="w-8 h-8 text-white animate-pulse" />
+            <Sparkles className="w-8 h-8 text-white animate-pulse" />SmartLeads AI
           </div>
         </div>
 
         {/* Headline */}
         <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-6 leading-tight">
           <span className="block sm:hidden">
-            SmartLeads AI Agent That Speaks{" "}
+            Agent That Speaks{" "}
             <span className="text-brand-gold">Your Beauty Language</span>
           </span>
           <span className="hidden sm:block">
