@@ -18,8 +18,8 @@ const HeroSection = () => {
       {/* Video Background with Gradient Overlay */}
       <video
         ref={videoRef}
-        poster="/path/to/thumbnail.jpg"
-        src="/path/to/strategy-video.mp4"
+        poster="/van2.jpg"
+        src="/Intro.mp4"
         muted
         loop
         playsInline
