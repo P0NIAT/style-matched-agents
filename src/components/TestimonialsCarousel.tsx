@@ -4,10 +4,10 @@ import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Mitchell",
+    name: "Sarah Parker",
     business: "Luxe Hair Studio",
     quote: "The AI sounds exactly like me! My clients have no idea they're chatting with a bot. It's captured my warm, bubbly personality perfectly. I'm getting 40% more bookings now!",
-    image: "https://pixabay.com/pl/photos/pi%C4%99kny-pi%C4%99kne-dziewczyny-odzie%C5%BC-2576846",
+    image: "https://www.pexels.com/photo/close-up-photography-of-a-woman-wearing-formal-coat-785667/",
     rating: 5
   },
   {
