@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 const integrations = [
@@ -17,7 +18,7 @@ const Integrations = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-brand-navy mb-6">
-            Seamless Integrations
+            Seamless Integration
           </h2>
           <p className="font-opensans text-xl text-gray-600 max-w-3xl mx-auto">
             Connect with all your existing tools and platforms. Our AI works wherever your clients are.
@@ -28,10 +29,11 @@ const Integrations = () => {
           {integrations.map((integration, index) => (
             <div 
               key={integration.name}
-              className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 animate-fade-in border border-gray-100"
+              className="bg-white rounded-2xl p-6 text-center hover:shadow-lg transition-all duration-300 hover:scale-105 animate-fade-in border border-gray-100 shadow-sm"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`w-12 h-12 bg-gradient-to-br ${integration.color} rounded-lg flex items-center justify-center mx-auto mb-4 text-2xl`}>
+              {/* iOS-style 60x60px icon */}
+              <div className={`w-15 h-15 bg-gradient-to-br ${integration.color} rounded-2xl flex items-center justify-center mx-auto mb-4 text-3xl shadow-lg`}>
                 {integration.logo}
               </div>
               <h3 className="font-opensans font-semibold text-brand-navy text-sm">
@@ -45,7 +47,7 @@ const Integrations = () => {
           <p className="font-opensans text-gray-600 mb-6">
             Need a custom integration? We'll build it for you.
           </p>
-          <Button className="bg-brand-navy hover:bg-brand-navy/90 text-white font-opensans font-medium px-8">
+          <Button className="bg-brand-navy hover:bg-brand-navy/90 text-white font-opensans font-medium px-8 py-3 rounded-full hover:scale-105 transition-all duration-300">
             Request Integration
           </Button>
         </div>

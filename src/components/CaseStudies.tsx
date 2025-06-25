@@ -4,9 +4,9 @@ import { ArrowRight, TrendingUp } from "lucide-react";
 
 const caseStudies = [
   {
-    businessName: "Luxe Hair Studio",
+    businessName: "Hair Deluxe",
     businessType: "Premium Hair Salon",
-    increase: "+47%",
+    increase: "+17%",
     metric: "Monthly Bookings",
     description: "Transformed their client communication with 24/7 AI that perfectly matches their upscale, personal approach.",
     image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop"
@@ -14,8 +14,8 @@ const caseStudies = [
   {
     businessName: "Serenity Spa & Wellness",
     businessType: "Luxury Spa",
-    increase: "+62%",
-    metric: "Client Retention",
+    increase: "+22%",
+    metric: "Monthly Bookings",
     description: "Our AI agent's personalized tone helped maintain their zen, welcoming atmosphere in every interaction.",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=400&h=300&fit=crop"
   }
@@ -27,7 +27,7 @@ const CaseStudies = () => {
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-montserrat font-bold text-4xl md:text-5xl text-brand-navy mb-6">
-            Real Results from Beauty Businesses
+            Results from Beauty Businesses
           </h2>
           <p className="font-opensans text-xl text-gray-600 max-w-3xl mx-auto">
             See how Smart Leads AI has transformed booking experiences and grown revenue for salons, spas, and clinics.

@@ -22,16 +22,23 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center animate-fade-in px-6">
-        {/* Sparkle Icon */}
+        {/* Sparkle Icon - Maintain aspect ratio on mobile */}
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/30">
             <Sparkles className="w-8 h-8 text-white animate-pulse" />
           </div>
         </div>
 
-        {/* Main Headline */}
+        {/* Main Headline - Mobile: inline "SmartLeads AI", Desktop: stacked */}
         <h1 className="font-montserrat font-bold text-4xl md:text-6xl text-white mb-6 leading-tight">
-          AI That Speaks <span className="text-brand-gold">Your Beauty Language</span>
+          {/* Mobile: inline */}
+          <span className="block sm:hidden">
+            SmartLeads AI That Speaks <span className="text-brand-gold">Your Beauty Language</span>
+          </span>
+          {/* Desktop: stacked */}
+          <span className="hidden sm:block">
+            AI That Speaks <span className="text-brand-gold">Your Beauty Language</span>
+          </span>
         </h1>
         
         <p className="font-opensans text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
@@ -39,14 +46,14 @@ const HeroSection = () => {
           <span className="text-brand-gold font-semibold"> your clients will never know it's AI</span>
         </p>
 
-        {/* Play Button */}
-        <div className="mb-8">
+        {/* Play Button - Centered on mobile */}
+        <div className="mb-8 flex justify-center">
           <button className="group relative w-28 h-28 bg-white/15 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-white/25 transition-all duration-300 hover:scale-110 border-2 border-brand-gold shadow-2xl">
             <Play className="w-12 h-12 text-white ml-1 group-hover:scale-110 transition-transform" />
             <div className="absolute inset-0 rounded-full border-2 border-brand-gold animate-ping opacity-30"></div>
           </button>
-          <p className="font-opensans text-white mt-4 text-lg">Watch Beauty Demo</p>
         </div>
+        <p className="font-opensans text-white mb-8 text-lg">Watch Beauty Demo</p>
 
         {/* CTA Button */}
         <Button className="bg-gradient-to-r from-brand-gold to-brand-cyan hover:from-brand-cyan hover:to-brand-gold text-white font-opensans font-bold px-12 py-6 text-xl rounded-full hover:scale-105 transition-all duration-300 shadow-2xl">

@@ -1,5 +1,5 @@
 
-import { Calendar, MessageCircle, Heart, Sparkles } from "lucide-react";
+import { Calendar, MessageCircle, DollarSign, Sparkles } from "lucide-react";
 
 const benefits = [
   {
@@ -9,24 +9,24 @@ const benefits = [
   },
   {
     icon: MessageCircle,
-    title: "Smart Reminders",
+    title: "Automated Reminders",
     description: "Gentle SMS & email notifications your clients love"
   },
   {
-    icon: Heart,
-    title: "Personal Pricing",
-    description: "Custom service quotes that reflect your unique value"
+    icon: DollarSign,
+    title: "Custom Pricing Info",
+    description: "Personalized service quotes that reflect your unique value"
   },
   {
     icon: Sparkles,
-    title: "Your Voice, Always",
+    title: "Personalized Chat Tone",
     description: "AI that captures your warmth and personality perfectly"
   }
 ];
 
 const BenefitsStrip = () => {
   return (
-    <section className="py-24 bg-gradient-to-r from-brand-soft to-white">
+    <section className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="font-montserrat font-bold text-3xl md:text-4xl text-brand-navy mb-4">
