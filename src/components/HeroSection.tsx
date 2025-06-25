@@ -66,7 +66,7 @@ const HeroSection = () => {
         {/* Sparkle Icon */}
         <div className="mb-8">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-white/20 backdrop-blur-sm rounded-full border-2 border-white/30">
-            <Sparkles className="w-8 h-8 text-white animate-pulse" />SmartLeads AI
+            <Sparkles className="w-8 h-8 text-white animate-pulse" />
           </div>
         </div>
 
